@@ -1,69 +1,48 @@
 import Image from "next/image";
-import styles from "./page.module.css";
+
+const OLD_SITE_URL = "https://bluedoorartgallery.com/";
 
 export default function Home() {
   return (
-    <div className={styles.page}>
-      <main className={styles.main}>
+    <main className="comingSoon">
+      <div className="wave waveOne" aria-hidden="true" />
+      <div className="wave waveTwo" aria-hidden="true" />
+
+      <section className="card" aria-labelledby="coming-soon-heading">
         <Image
-          className={styles.logo}
-          src="/next.svg"
-          alt="Next.js logo"
-          width={100}
-          height={20}
+          className="logo"
+          src="/earth-and-tide-logo.jpg"
+          alt="Earth & Tide Art"
+          width={1408}
+          height={768}
           priority
+          sizes="(max-width: 720px) 92vw, 720px"
         />
-        <div className={styles.intro}>
-          <h1>
-            To get started, edit the{" "}
-            <code className={styles.code}>page.tsx</code> file.
-          </h1>
-          <p>
-            Looking for a starting point or more instructions? Head over to{" "}
-            <a
-              href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              Templates
-            </a>{" "}
-            or the{" "}
-            <a
-              href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              Learning
-            </a>{" "}
-            center.
+
+        <div className="content">
+          <p className="eyebrow">A new chapter is on the way</p>
+          <h1 id="coming-soon-heading">We&apos;re undergoing a rebrand.</h1>
+          <p className="intro">
+            Earth &amp; Tide Art is getting a new home. While we finish creating
+            the new website, you can continue browsing and shopping on my
+            previous site Blue Door Art Gallery.
+          </p>
+
+          <a
+            className="button"
+            href={OLD_SITE_URL}
+            target="_blank"
+            rel="noreferrer"
+          >
+            Visit Blue Door Art Gallery
+            <span aria-hidden="true">→</span>
+          </a>
+
+          <p className="comingSoonText">
+            New Earth &amp; Tide Art website coming soon.
           </p>
         </div>
-        <div className={styles.ctas}>
-          <a
-            className={styles.primary}
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className={styles.logo}
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={16}
-              height={14}
-            />
-            Deploy Now
-          </a>
-          <a
-            className={styles.secondary}
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Documentation
-          </a>
-        </div>
-      </main>
-    </div>
+      </section>
+    </main>
   );
 }
